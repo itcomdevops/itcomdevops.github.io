@@ -1,0 +1,2578 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Моя документация и заметки">
+      
+      
+        <meta name="author" content="Ваш никнейм">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Vibe Coding Guide — Проектная документация - Docs Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vibe-coding-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs Blog" class="md-header__button md-logo" aria-label="Docs Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vibe Coding Guide — Проектная документация
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs Blog" class="md-nav__button md-logo" aria-label="Docs Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Docs Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    О блоге
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Оглавление
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Введение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Введение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Цель проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Задачи проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-vibe-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Определение vibe coding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vibe-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Анализ рынка vibe coding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Анализ рынка vibe coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Методология исследования
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Ключевые рыночные показатели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Основные категории инструментов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Основные категории инструментов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 1: AI IDE и редакторы кода
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-browser-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 2: Browser-based платформы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 3: VS Code расширения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-y-combinator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 4: Y Combinator стартапы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-low-codeno-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 5: Low-code/No-code платформы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категория 6: Enterprise решения
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-2025-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Тренды рынка 2025-2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Сбор и систематизация материалов
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Сбор и систематизация материалов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Источники данных
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Источники данных">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Веб-поиск и анализ ресурсов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Анализ конкурентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Структурированные данные
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Структурированные данные">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#150" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        База инструментов (150+ единиц)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Категоризация
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Создание статьи для блога
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Создание контента
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Создание контента">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Структура контента
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Структура контента">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Раздел 1: Введение и определения
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Раздел 2: Рыночная статистика
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Раздел 3: Каталог инструментов (6 категорий)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Раздел 4: Сравнение и анализ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Раздел 5: Рекомендации
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Форматы контента
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Разработка веб-сайта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Разработка веб-сайта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Архитектура проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Страницы сайта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Страницы сайта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indexhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Главная страница (index.html)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolshtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Каталог инструментов (tools.html)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparisonhtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сравнение инструментов (comparison.html)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendationshtml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Рекомендации (recommendations.html)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Технологии и подходы
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3. Технологии и подходы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-es6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JavaScript (ES6+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Дизайн-система
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4. Дизайн-система">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цветовая схема
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типографика
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Компоненты
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5. Адаптивность
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Развёртывание на хостинге
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Развёртывание на хостинге">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Выбор хостинга
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Создание репозитория
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Инициализация Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Подключение к GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-github-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Авторизация GitHub CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Загрузка на GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7. Активация GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8. Результат
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Технические детали
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Технические детали">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Структура файлов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Внешние зависимости
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Производительность
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Безопасность
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5. Поддержка браузеров
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Результаты проекта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Результаты проекта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Достигнутые цели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Количественные показатели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Качественные показатели
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Планы развития
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Заключение
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Заключение">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Итоги проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. Ключевые выводы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. Полезные ссылки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4. Благодарности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="vibe-coding-guide">Vibe Coding Guide — Проектная документация<a class="headerlink" href="#vibe-coding-guide" title="Permanent link">&para;</a></h1>
+<p><strong>Автор:</strong> AI Coding Assistant<br />
+<strong>Дата создания:</strong> Январь 2026<br />
+<strong>Статус:</strong> Завершён</p>
+<hr />
+<h2 id="_1">Оглавление<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-введение">Введение</a></li>
+<li><a href="#2-анализ-рынка-vibe-coding">Анализ рынка vibe coding</a></li>
+<li><a href="#3-сбор-и-систематизация-материалов">Сбор и систематизация материалов</a></li>
+<li><a href="#4-создание-контента">Создание контента</a></li>
+<li><a href="#5-разработка-веб-сайта">Разработка веб-сайта</a></li>
+<li><a href="#6-развёртывание-на-хостинге">Развёртывание на хостинге</a></li>
+<li><a href="#7-технические-детали">Технические детали</a></li>
+<li><a href="#8-результаты-проекта">Результаты проекта</a></li>
+<li><a href="#9-заключение">Заключение</a></li>
+</ol>
+<hr />
+<h2 id="1">1. Введение<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1. Цель проекта<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>Создание информативного веб-сайта, содержащего полный обзор инструментов для vibe coding — парадигмы программирования с использованием искусственного интеллекта, где разработчики описывают желаемый результат на естественном языке, а AI генерирует рабочий код.</p>
+<h3 id="12">1.2. Задачи проекта<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Провести глубокий анализ рынка AI-инструментов для разработки</li>
+<li>Собрать и систематизировать информацию о 150+ инструментах</li>
+<li>Создать структурированный каталог с категоризацией</li>
+<li>Разработать веб-сайт с удобной навигацией</li>
+<li>Обеспечить возможность сравнения инструментов</li>
+<li>Дать персональные рекомендации по выбору</li>
+<li>Разместить сайт на бесплатном хостинге</li>
+</ul>
+<h3 id="13-vibe-coding">1.3. Определение vibe coding<a class="headerlink" href="#13-vibe-coding" title="Permanent link">&para;</a></h3>
+<p><strong>Vibe Coding</strong> — это парадигма программирования, при которой разработчики и пользователи используют искусственный интеллект для создания программного обеспечения через естественный язык, минуя традиционное написание кода строчка за строчкой.</p>
+<p>Ключевые характеристики:
+- Описание желаемого результата на естественном языке
+- Автоматическая генерация рабочего кода AI-системами
+- Минимизация необходимости знания синтаксиса языков программирования
+- Фокус на результате, а не на процессе написания кода</p>
+<p>Термин <strong>"vibe coding"</strong> был официально признан <strong>Collins Dictionary словом года в декабре 2025 года</strong>, что подчёркивает массовое принятие этой технологии в обществе.</p>
+<hr />
+<h2 id="2-vibe-coding">2. Анализ рынка vibe coding<a class="headerlink" href="#2-vibe-coding" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1. Методология исследования<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>Для сбора актуальной информации были использованы следующие источники:</p>
+<table>
+<thead>
+<tr>
+<th>Источник</th>
+<th>Тип данных</th>
+<th>Объём</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CB Insights Reports</td>
+<td>Рыночная статистика</td>
+<td>10+ отчётов</td>
+</tr>
+<tr>
+<td>Y Combinator</td>
+<td>Стартапы, инвестиции</td>
+<td>50+ компаний</td>
+</tr>
+<tr>
+<td>Product Hunt</td>
+<td>Тренды, рейтинги</td>
+<td>100+ продуктов</td>
+</tr>
+<tr>
+<td>GitHub Trending</td>
+<td>Популярность open-source</td>
+<td>50+ репозиториев</td>
+</tr>
+<tr>
+<td>Официальные сайты</td>
+<td>Документация, цены</td>
+<td>150+ инструментов</td>
+</tr>
+<tr>
+<td>TechCrunch, Forbes</td>
+<td>Аналитика, интервью</td>
+<td>20+ статей</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2. Ключевые рыночные показатели<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>По состоянию на декабрь 2025 года:</p>
+<div class="codehilite"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                    РЫНОЧНАЯ СТАТИСТИКА                      │
+├─────────────────────────────────────────────────────────────┤
+│  GitHub Copilot ARR           │  &gt;$1 миллиард              │
+│  Все основные игроки ARR      │  &gt;$1 миллиард каждый       │
+│  Пользователи Cursor          │  1M+                       │
+│  Пользователи Kilo Code       │  750K+                     │
+│  Установки Roo Code           │  1.14M                     │
+│  YC стартапы с 95% AI-кода    │  ~25% W25 batch            │
+│  Прирост продуктивности       │  10x (средний показатель)  │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+
+<h3 id="23">2.3. Основные категории инструментов<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>В ходе исследования было выявлено 6 основных категорий:</p>
+<h4 id="1-ai-ide">Категория 1: AI IDE и редакторы кода<a class="headerlink" href="#1-ai-ide" title="Permanent link">&para;</a></h4>
+<p>Профессиональные среды разработки с глубокой интеграцией AI.</p>
+<table>
+<thead>
+<tr>
+<th>Инструмент</th>
+<th>Компания</th>
+<th>Платформа</th>
+<th>Ключевая особенность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cursor</td>
+<td>Anysphere</td>
+<td>macOS, Win, Linux</td>
+<td>Composer, Agent Mode</td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td>Codeium</td>
+<td>macOS, Win, Linux</td>
+<td>Cascade AI, Tab autocomplete</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>Anthropic</td>
+<td>CLI</td>
+<td>Terminal-native, Git integration</td>
+</tr>
+<tr>
+<td>Zed</td>
+<td>Zed Industries</td>
+<td>macOS, Win, Linux</td>
+<td>Speed-first, collaborative</td>
+</tr>
+<tr>
+<td>OpenCode</td>
+<td>Open-source</td>
+<td>macOS, Win, Linux</td>
+<td>Open-source Claude alternative</td>
+</tr>
+<tr>
+<td>Codegen</td>
+<td>CodeGen</td>
+<td>Cross-platform</td>
+<td>OS for Code Agents</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Рыночная позиция:</strong> Cursor является лидером рынка с 1M+ пользователей и считается де-факто стандартом для vibe coding.</p>
+<h4 id="2-browser-based">Категория 2: Browser-based платформы<a class="headerlink" href="#2-browser-based" title="Permanent link">&para;</a></h4>
+<p>Платформы для разработки прямо в браузере без установки дополнительного ПО.</p>
+<table>
+<thead>
+<tr>
+<th>Платформа</th>
+<th>Специализация</th>
+<th>Интеграции</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bolt.new</td>
+<td>Collaborative AI</td>
+<td>Stripe, Figma, Supabase, GitHub</td>
+</tr>
+<tr>
+<td>Replit</td>
+<td>Cloud IDE + Agent</td>
+<td>50+ языков, мгновенный деплой</td>
+</tr>
+<tr>
+<td>Lovable</td>
+<td>Full-stack из промптов</td>
+<td>Supabase, GitHub, React</td>
+</tr>
+<tr>
+<td>v0 (Vercel)</td>
+<td>UI генерация</td>
+<td>Vercel, React, Tailwind CSS</td>
+</tr>
+<tr>
+<td>Emergent</td>
+<td>Full-stack AI</td>
+<td>Хостинг, базы данных</td>
+</tr>
+<tr>
+<td>Base44</td>
+<td>AI-native platform</td>
+<td>Full-stack веб-приложения</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Рыночная позиция:</strong> Bolt.new лидирует в collaborative разработке, Replit — классика для образования, Lovable — лучший выбор для начинающих.</p>
+<h4 id="3-vs-code">Категория 3: VS Code расширения<a class="headerlink" href="#3-vs-code" title="Permanent link">&para;</a></h4>
+<p>Добавление AI-возможностей в популярный редактор.</p>
+<table>
+<thead>
+<tr>
+<th>Расширение</th>
+<th>Провайдер</th>
+<th>Популярность</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Copilot</td>
+<td>GitHub/OpenAI</td>
+<td>#1</td>
+<td>Inline suggestions, coding agent</td>
+</tr>
+<tr>
+<td>Kilo Code</td>
+<td>Kilo Org</td>
+<td>750K+</td>
+<td>Open-source, #1 на OpenRouter</td>
+</tr>
+<tr>
+<td>Roo Code</td>
+<td>Roo Code Inc</td>
+<td>1.14M</td>
+<td>Multi-model, автоматизация</td>
+</tr>
+<tr>
+<td>Tabnine</td>
+<td>Tabnine</td>
+<td>High</td>
+<td>Enterprise, локальная обработка</td>
+</tr>
+<tr>
+<td>Continue</td>
+<td>Open-source</td>
+<td>Средняя</td>
+<td>Self-hosted, кастомизация</td>
+</tr>
+<tr>
+<td>Sweep AI</td>
+<td>Sweep</td>
+<td>Растущая</td>
+<td>JetBrains + VS Code</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Рыночная позиция:</strong> GitHub Copilot — самый популярный, Kilo Code — лучший open-source выбор.</p>
+<h4 id="4-y-combinator">Категория 4: Y Combinator стартапы<a class="headerlink" href="#4-y-combinator" title="Permanent link">&para;</a></h4>
+<p>Инновационные компании, поддержанные Y Combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Компания</th>
+<th>Batch</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rebolt</td>
+<td>W25</td>
+<td>Build apps by speaking with AI</td>
+</tr>
+<tr>
+<td>OpenBuilder</td>
+<td>F25</td>
+<td>Open-source альтернатива Lovable</td>
+</tr>
+<tr>
+<td>Compyle</td>
+<td>F25</td>
+<td>Collaborative coding agent</td>
+</tr>
+<tr>
+<td>cubic</td>
+<td>S25</td>
+<td>AI-powered code review</td>
+</tr>
+<tr>
+<td>Vibe Kanban</td>
+<td>S21</td>
+<td>Plan and review AI code</td>
+</tr>
+<tr>
+<td>Sweep</td>
+<td>S23</td>
+<td>AI assistant для JetBrains</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тренды YC 2025:</strong>
+- B2B software — почти 2/3 batch занимаются инфраструктурой и инструментами
+- Vibe coding — значительный рост стартапов в сфере
+- Code review — отдельный сегмент для проверки AI-кода</p>
+<h4 id="5-low-codeno-code">Категория 5: Low-code/No-code платформы<a class="headerlink" href="#5-low-codeno-code" title="Permanent link">&para;</a></h4>
+<p>Создание приложений без программирования.</p>
+<table>
+<thead>
+<tr>
+<th>Платформа</th>
+<th>Тип</th>
+<th>AI-особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glide</td>
+<td>No-code</td>
+<td>AI App Generator, data-driven apps</td>
+</tr>
+<tr>
+<td>Softr</td>
+<td>No-code</td>
+<td>AI-powered building, Airtable, Google Sheets</td>
+</tr>
+<tr>
+<td>Airtable</td>
+<td>Low-code</td>
+<td>AI workflows, no-code AI tools</td>
+</tr>
+<tr>
+<td>Betty Blocks</td>
+<td>Low-code</td>
+<td>AI App Generation для бизнеса</td>
+</tr>
+<tr>
+<td>Notion AI</td>
+<td>Workspace AI</td>
+<td>AI-powered workspace</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Рыночная позиция:</strong> Glide — лидер в мобильных приложениях, Softr — лучший для бизнес-приложений.</p>
+<h4 id="6-enterprise">Категория 6: Enterprise решения<a class="headerlink" href="#6-enterprise" title="Permanent link">&para;</a></h4>
+<p>Корпоративные платформы с безопасностью и масштабируемостью.</p>
+<table>
+<thead>
+<tr>
+<th>Платформа</th>
+<th>Компания</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabnine Enterprise</td>
+<td>Tabnine</td>
+<td>Fully private, self-hosted, air-gapped</td>
+</tr>
+<tr>
+<td>Sourcegraph Enterprise</td>
+<td>Sourcegraph</td>
+<td>Code intelligence для больших кодовых баз</td>
+</tr>
+<tr>
+<td>Augment Code</td>
+<td>Augment</td>
+<td>Better context для агентов</td>
+</tr>
+<tr>
+<td>JetBrains AI Assistant</td>
+<td>JetBrains</td>
+<td>IDE integration, corporate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Рыночная позиция:</strong> Tabnine Enterprise — максимальная безопасность, Sourcegraph — лучший для больших команд.</p>
+<h3 id="24-2025-2026">2.4. Тренды рынка 2025-2026<a class="headerlink" href="#24-2025-2026" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Тренд</th>
+<th>Описание</th>
+<th>Влияние</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agentic IDE</td>
+<td>IDE с встроенными автономными агентами</td>
+<td>Cursor 2.0, Windsurf</td>
+</tr>
+<tr>
+<td>Multi-model Support</td>
+<td>Поддержка нескольких LLM одновременно</td>
+<td>Повышение качества результатов</td>
+</tr>
+<tr>
+<td>Collaborative AI</td>
+<td>Несколько AI-агентов работают вместе</td>
+<td>Bolt.new, Cursor</td>
+</tr>
+<tr>
+<td>Voice Interfaces</td>
+<td>Голосовой ввод для программирования</td>
+<td>Rebolt (YC W25)</td>
+</tr>
+<tr>
+<td>CLI Renaissance</td>
+<td>Возрождение CLI-инструментов</td>
+<td>Claude Code, Aider</td>
+</tr>
+<tr>
+<td>Code Review AI</td>
+<td>Автоматическая проверка AI-кода</td>
+<td>cubic, Graphite</td>
+</tr>
+<tr>
+<td>Enterprise Security</td>
+<td>Self-hosted для корпоративной безопасности</td>
+<td>Tabnine Enterprise</td>
+</tr>
+<tr>
+<td>Visual Editing</td>
+<td>Визуальные редакторы для UI</td>
+<td>Cursor Browser</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3">3. Сбор и систематизация материалов<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1. Источники данных<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<h4 id="-">Веб-поиск и анализ ресурсов<a class="headerlink" href="#-" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Категория поиска</th>
+<th>Результаты</th>
+<th>Использование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI coding tools 2025</td>
+<td>20+ источников</td>
+<td>Основная статистика</td>
+</tr>
+<tr>
+<td>Y Combinator AI startups</td>
+<td>15+ источников</td>
+<td>Профили стартапов</td>
+</tr>
+<tr>
+<td>Vibe coding platforms</td>
+<td>25+ источников</td>
+<td>Browser-платформы</td>
+</tr>
+<tr>
+<td>VS Code AI extensions</td>
+<td>20+ источников</td>
+<td>Расширения для VS Code</td>
+</tr>
+<tr>
+<td>Enterprise AI solutions</td>
+<td>10+ источников</td>
+<td>Корпоративные решения</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2">Анализ конкурентов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурс</th>
+<th>Тип</th>
+<th>Что изучали</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vibecoding.app</td>
+<td>Каталог</td>
+<td>Структура, категоризация</td>
+</tr>
+<tr>
+<td>vibetools.net</td>
+<td>Рейтинг</td>
+<td>Критерии оценки</td>
+</tr>
+<tr>
+<td>CB Insights</td>
+<td>Аналитика</td>
+<td>Рыночная статистика</td>
+</tr>
+<tr>
+<td>Y Combinator</td>
+<td>База стартапов</td>
+<td>Профили компаний</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2. Структурированные данные<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<h4 id="150">База инструментов (150+ единиц)<a class="headerlink" href="#150" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>Структура данных для каждого инструмента:
+├── Название
+├── Категория
+├── Описание
+├── Платформа
+├── Ключевые особенности
+├── Ценообразование
+├── Популярность (если доступно)
+└── Ссылки (сайт, документация)
+</code></pre></div>
+
+<h4 id="_3">Категоризация<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Количество</th>
+<th>Примеры</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI IDE</td>
+<td>10+</td>
+<td>Cursor, Windsurf, Claude Code</td>
+</tr>
+<tr>
+<td>Browser платформы</td>
+<td>20+</td>
+<td>Bolt.new, Replit, Lovable</td>
+</tr>
+<tr>
+<td>VS Code расширения</td>
+<td>30+</td>
+<td>GitHub Copilot, Kilo Code</td>
+</tr>
+<tr>
+<td>YC стартапы</td>
+<td>20+</td>
+<td>Rebolt, OpenBuilder, cubic</td>
+</tr>
+<tr>
+<td>Low-code/No-code</td>
+<td>20+</td>
+<td>Glide, Softr, Airtable</td>
+</tr>
+<tr>
+<td>Enterprise</td>
+<td>10+</td>
+<td>Tabnine, Sourcegraph</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3. Создание статьи для блога<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>На основе собранных материалов была создана статья <strong>"Vibe Coding: Полный гид по AI-инструментам для разработки в 2025-2026 годах"</strong> объёмом более 1200 строк, содержащая:</p>
+<ol>
+<li>Введение и определение vibe coding</li>
+<li>Рыночную статистику и тренды</li>
+<li>Детальный обзор 6 категорий инструментов</li>
+<li>Сравнительные таблицы</li>
+<li>Рекомендации по выбору</li>
+<li>Прогнозы развития рынка</li>
+</ol>
+<p>Файл: <code>vibe-coding-guide-2025.md</code></p>
+<hr />
+<h2 id="4">4. Создание контента<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1. Структура контента<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<h4 id="1_1">Раздел 1: Введение и определения<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>- Что такое vibe coding
+- История термина
+- Признание Collins Dictionary
+- Как это работает (сравнение традиционной разработки и vibe coding)
+- Почему это важно
+</code></pre></div>
+
+<h4 id="2">Раздел 2: Рыночная статистика<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>- Ключевые метрики (ARR, пользователи, adoption rate)
+- Топ-10 трендов 2025-2026
+- Проникновение технологии (YC статистика)
+- Влияние на индустрию
+</code></pre></div>
+
+<h4 id="3-6">Раздел 3: Каталог инструментов (6 категорий)<a class="headerlink" href="#3-6" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>- AI IDE и редакторы кода
+- Browser-based платформы
+- VS Code расширения
+- Y Combinator стартапы
+- Low-code/No-code платформы
+- Enterprise и Security решения
+</code></pre></div>
+
+<h4 id="4_1">Раздел 4: Сравнение и анализ<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>- Сравнительные таблицы по категориям
+- Рейтинг инструментов
+- Анализ ценовых моделей
+- Сравнение по бюджету
+</code></pre></div>
+
+<h4 id="5">Раздел 5: Рекомендации<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>- Для начинающих
+- Для профессиональных разработчиков
+- Для команд
+- Для Enterprise
+- По сценариям использования
+</code></pre></div>
+
+<h3 id="42">4.2. Форматы контента<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Формат</th>
+<th>Применение</th>
+<th>Объём</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown статья</td>
+<td>Блог, документация</td>
+<td>1200+ строк</td>
+</tr>
+<tr>
+<td>HTML страницы</td>
+<td>Веб-сайт</td>
+<td>2300+ строк кода</td>
+</tr>
+<tr>
+<td>Таблицы сравнения</td>
+<td>Сравнение инструментов</td>
+<td>15+ таблиц</td>
+</tr>
+<tr>
+<td>Рейтинги</td>
+<td>Выбор инструментов</td>
+<td>5+ рейтингов</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-">5. Разработка веб-сайта<a class="headerlink" href="#5-" title="Permanent link">&para;</a></h2>
+<h3 id="51">5.1. Архитектура проекта<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">vibe</span><span class="o">-</span><span class="n">coding</span><span class="o">-</span><span class="n">site</span><span class="o">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="w">              </span><span class="c1"># Главная страница (412 строк)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">tools</span><span class="o">.</span><span class="n">html</span><span class="w">             </span><span class="c1"># Каталог инструментов (728 строк)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">comparison</span><span class="o">.</span><span class="n">html</span><span class="w">        </span><span class="c1"># Сравнение инструментов (506 строк)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">recommendations</span><span class="o">.</span><span class="n">html</span><span class="w">   </span><span class="c1"># Рекомендации (528 строк)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">styles</span><span class="o">.</span><span class="n">css</span><span class="w">         </span><span class="c1"># Стили (1422 строки)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">js</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">main</span><span class="o">.</span><span class="n">js</span><span class="w">            </span><span class="c1"># Интерактивность (456 строк)</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">images</span><span class="o">/</span><span class="w">                </span><span class="c1"># Изображения</span>
+<span class="err">└──</span><span class="w"> </span><span class="n">README</span><span class="o">.</span><span class="n">md</span><span class="w">              </span><span class="c1"># Документация</span>
+
+<span class="err">📊</span><span class="w"> </span><span class="n">Total</span><span class="p">:</span><span class="w"> </span><span class="o">~</span><span class="mi">2300</span><span class="o">+</span><span class="w"> </span><span class="err">строк</span><span class="w"> </span><span class="err">кода</span>
+</code></pre></div>
+
+<h3 id="52">5.2. Страницы сайта<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<h4 id="indexhtml">Главная страница (index.html)<a class="headerlink" href="#indexhtml" title="Permanent link">&para;</a></h4>
+<p><strong>Цель:</strong> Привлечь внимание и дать обзор проекта.</p>
+<p><strong>Секции:</strong>
+1. Hero секция с анимированным фоном
+2. Статистика рынка vibe coding
+3. Обзор возможностей (4 карточки)
+4. Визуальное сравнение традиционной разработки и vibe coding
+5. Категории инструментов (6 карточек)
+6. Рыночная статистика (4 карточки)
+7. Топ-4 инструмента
+8. Тренды 2025-2026 (5 пунктов)
+9. Призыв к действию</p>
+<p><strong>Элементы:</strong>
+- Gradient orbs анимация
+- Статистические счётчики с анимацией
+- Hover эффекты на карточках
+- Адаптивный дизайн</p>
+<h4 id="toolshtml">Каталог инструментов (tools.html)<a class="headerlink" href="#toolshtml" title="Permanent link">&para;</a></h4>
+<p><strong>Цель:</strong> Представить полный каталог инструментов с возможностью поиска и фильтрации.</p>
+<p><strong>Секции:</strong>
+1. Header с навигацией
+2. Поисковая строка
+3. Фильтры по категориям (6 кнопок)
+4. 6 категорий инструментов:
+   - AI IDE (Cursor, Windsurf, Claude Code, Zed, OpenCode, Codegen)
+   - Browser платформы (Bolt.new, Replit, Lovable, v0, Emergent, Base44)
+   - VS Code расширения (GitHub Copilot, Kilo Code, Roo Code, Tabnine, Continue, Sweep AI)
+   - YC стартапы (Rebolt, OpenBuilder, Compyle, cubic, Vibe Kanban, Sweep)
+   - Low-code/No-code (Glide, Softr, Airtable, Betty Blocks)
+   - Enterprise (Tabnine Enterprise, Sourcegraph, Augment Code, JetBrains AI)</p>
+<p><strong>Функционал:</strong>
+- Поиск по названию и описанию
+- Фильтрация по категориям
+- Карточки с подробной информацией
+- Ссылки на официальные сайты и документацию</p>
+<h4 id="comparisonhtml">Сравнение инструментов (comparison.html)<a class="headerlink" href="#comparisonhtml" title="Permanent link">&para;</a></h4>
+<p><strong>Цель:</strong> Представить детальное сравнение инструментов в табличной форме.</p>
+<p><strong>Вкладки:</strong>
+1. AI IDE (Cursor, Windsurf, Claude Code, Zed)
+2. Browser платформы (Bolt.new, Replit, Lovable, v0)
+3. VS Code расширения (GitHub Copilot, Kilo Code, Roo Code, Tabnine)
+4. Enterprise решения (Tabnine Enterprise, Sourcegraph, Augment Code, JetBrains AI)</p>
+<p><strong>Элементы:</strong>
+- Активные/неактивные вкладки
+- Таблицы с выделением лидера
+- Итоги сравнения
+- Сравнение по бюджету (4 уровня)</p>
+<h4 id="recommendationshtml">Рекомендации (recommendations.html)<a class="headerlink" href="#recommendationshtml" title="Permanent link">&para;</a></h4>
+<p><strong>Цель:</strong> Дать персональные рекомендации по выбору инструментов.</p>
+<p><strong>Секции:</strong>
+1. Quick selector (уровень, тип работы, бюджет)
+2. Для начинающих (Lovable, Bolt.new, Glide)
+3. Для среднего уровня (Cursor, Windsurf, GitHub Copilot)
+4. Для продвинутых (Claude Code, Aider, Continue)
+5. Для Enterprise (Tabnine Enterprise, Sourcegraph, Augment Code)
+6. Рекомендации по сценариям (6 сценариев)
+7. Интерактивный чеклист для Enterprise</p>
+<p><strong>Функционал:</strong>
+- Генератор рекомендаций на основе выбора
+- Модальные окна с результатами
+- Интерактивный чеклист</p>
+<h3 id="53">5.3. Технологии и подходы<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<h4 id="html5">HTML5<a class="headerlink" href="#html5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Семантическая разметка</li>
+<li>Доступность (ARIA атрибуты)</li>
+<li>Адаптивные мета-теги</li>
+<li>SEO-оптимизированная структура</li>
+</ul>
+<h4 id="css3">CSS3<a class="headerlink" href="#css3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>CSS Variables для темизации</li>
+<li>CSS Grid для сеток</li>
+<li>Flexbox для выравнивания</li>
+<li>CSS Animations и Transitions</li>
+<li>Media queries для адаптивности</li>
+<li>Glassmorphism элементы</li>
+<li>Hover эффекты</li>
+</ul>
+<p><strong>Пример CSS Variables:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#6366f1</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--primary-light</span><span class="p">:</span><span class="w"> </span><span class="mh">#818cf8</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--secondary</span><span class="p">:</span><span class="w"> </span><span class="mh">#10b981</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--accent</span><span class="p">:</span><span class="w"> </span><span class="mh">#f59e0b</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#0f0f23</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-secondary</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a2e</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--font-primary</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Inter&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--font-mono</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;JetBrains Mono&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="javascript-es6">JavaScript (ES6+)<a class="headerlink" href="#javascript-es6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Модульная структура</li>
+<li>Event-driven архитектура</li>
+<li>Intersection Observer API</li>
+<li>Fetch API для данных</li>
+<li>Template literals</li>
+<li>Arrow functions</li>
+<li>Destructuring</li>
+</ul>
+<p><strong>Функционал:</strong>
+- Мобильное меню
+- Фильтрация инструментов
+- Табы для сравнения
+- Поиск по инструментам
+- Генератор рекомендаций
+- Модальные окна
+- Анимация счётчиков
+- Lazy loading
+- Keyboard navigation
+- Система уведомлений</p>
+<h3 id="54-">5.4. Дизайн-система<a class="headerlink" href="#54-" title="Permanent link">&para;</a></h3>
+<h4 id="_4">Цветовая схема<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Цвет</th>
+<th>HEX</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td>#6366f1</td>
+<td>Основной акцент, кнопки</td>
+</tr>
+<tr>
+<td>Primary Light</td>
+<td>#818cf8</td>
+<td>Hover эффекты</td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>#10b981</td>
+<td>Успех, рекомендации</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>#f59e0b</td>
+<td>Предупреждения, топ-рейтинг</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>#0f0f23</td>
+<td>Основной фон</td>
+</tr>
+<tr>
+<td>Card Background</td>
+<td>#1e1e35</td>
+<td>Карточки</td>
+</tr>
+<tr>
+<td>Text Primary</td>
+<td>#ffffff</td>
+<td>Основной текст</td>
+</tr>
+<tr>
+<td>Text Secondary</td>
+<td>#a1a1aa</td>
+<td>Вторичный текст</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5">Типографика<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Шрифт</th>
+<th>Размер</th>
+<th>Вес</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Заголовки</td>
+<td>Inter</td>
+<td>2-4rem</td>
+<td>700</td>
+</tr>
+<tr>
+<td>Основной текст</td>
+<td>Inter</td>
+<td>1rem</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Подписи</td>
+<td>Inter</td>
+<td>0.875rem</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Код</td>
+<td>JetBrains Mono</td>
+<td>0.9rem</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_6">Компоненты<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><strong>Кнопки:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">btn</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline-flex</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">btn-primary</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--primary</span><span class="p">);</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">btn-secondary</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg-tertiary</span><span class="p">);</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--border-color</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>Карточки:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">.</span><span class="nc">card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg-card</span><span class="p">);</span>
+<span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--border-color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">card</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-4</span><span class="kt">px</span><span class="p">);</span>
+<span class="w">    </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--primary</span><span class="p">);</span>
+<span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--shadow-glow</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="55">5.5. Адаптивность<a class="headerlink" href="#55" title="Permanent link">&para;</a></h3>
+<p><strong>Breakpoints:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Breakpoint</th>
+<th>Ширина</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile</td>
+<td>&lt; 480px</td>
+<td>Одноколоночный макет</td>
+</tr>
+<tr>
+<td>Tablet</td>
+<td>480-768px</td>
+<td>Две колонки</td>
+</tr>
+<tr>
+<td>Desktop</td>
+<td>768-1024px</td>
+<td>Три колонки</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>&gt; 1024px</td>
+<td>Полный макет</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример media query:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">768px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="nc">nav-links</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">        </span><span class="k">top</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--header-height</span><span class="p">);</span>
+<span class="w">        </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">right</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg-primary</span><span class="p">);</span>
+<span class="w">        </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">hero-stats</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">.</span><span class="nc">tools-grid</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">grid-template-columns</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="6">6. Развёртывание на хостинге<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="61">6.1. Выбор хостинга<a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<p><strong>Критерии выбора:</strong>
+- Бесплатный тариф
+- Поддержка статических сайтов
+- SSL сертификат
+- Кастомные домены
+- GitHub интеграция</p>
+<p><strong>Рассмотренные варианты:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Хостинг</th>
+<th>Бесплатно</th>
+<th>SSL</th>
+<th>Кастомный домен</th>
+<th>GitHub Pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Pages</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Vercel</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Netlify</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Cloudflare Pages</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Выбранный вариант:</strong> GitHub Pages</p>
+<h3 id="62">6.2. Создание репозитория<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Создан новый GitHub аккаунт: <strong>uanitstudio</strong></li>
+<li>Создан репозиторий: <strong>uanitstudio.github.io</strong></li>
+</ol>
+<h3 id="63-git">6.3. Инициализация Git<a class="headerlink" href="#63-git" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/ubuntu/project/Vibecoding/tools/vibe-coding-site
+git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit - Vibe Coding Guide&quot;</span>
+</code></pre></div>
+
+<h3 id="64-github">6.4. Подключение к GitHub<a class="headerlink" href="#64-github" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/uanitstudio/uanitstudio.github.io.git
+git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</code></pre></div>
+
+<h3 id="65-github-cli">6.5. Авторизация GitHub CLI<a class="headerlink" href="#65-github-cli" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>gh<span class="w"> </span>auth<span class="w"> </span>login
+<span class="c1"># Выбраны опции:</span>
+<span class="c1"># - GitHub.com</span>
+<span class="c1"># - HTTPS</span>
+<span class="c1"># - Login with a web browser</span>
+<span class="c1"># - Введён код на https://github.com/login/device/activate</span>
+</code></pre></div>
+
+<h3 id="66-github">6.6. Загрузка на GitHub<a class="headerlink" href="#66-github" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+
+<h3 id="67-github-pages">6.7. Активация GitHub Pages<a class="headerlink" href="#67-github-pages" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Открыт репозиторий: https://github.com/uanitstudio/uanitstudio.github.io</li>
+<li><strong>Settings</strong> → <strong>Pages</strong></li>
+<li><strong>Source</strong>: выбрана <strong>main</strong> branch</li>
+<li><strong>Save</strong></li>
+</ol>
+<h3 id="68">6.8. Результат<a class="headerlink" href="#68" title="Permanent link">&para;</a></h3>
+<p><strong>URL сайта:</strong> https://uanitstudio.github.io/</p>
+<p><strong>Время деплоя:</strong> 1-2 минуты после активации</p>
+<hr />
+<h2 id="7">7. Технические детали<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1. Структура файлов<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">vibe</span><span class="o">-</span><span class="n">coding</span><span class="o">-</span><span class="n">site</span><span class="o">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="w">           </span><span class="mi">412</span><span class="w"> </span><span class="err">строк</span><span class="w">  </span><span class="err">Главная</span><span class="w"> </span><span class="err">страница</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">tools</span><span class="o">.</span><span class="n">html</span><span class="w">           </span><span class="mi">728</span><span class="w"> </span><span class="err">строк</span><span class="w">  </span><span class="err">Каталог</span><span class="w"> </span><span class="err">инструментов</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">comparison</span><span class="o">.</span><span class="n">html</span><span class="w">      </span><span class="mi">506</span><span class="w"> </span><span class="err">строк</span><span class="w">  </span><span class="err">Сравнение</span><span class="w"> </span><span class="err">инструментов</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">recommendations</span><span class="o">.</span><span class="n">html</span><span class="w"> </span><span class="mi">528</span><span class="w"> </span><span class="err">строк</span><span class="w">  </span><span class="err">Рекомендации</span><span class="w"> </span><span class="err">по</span><span class="w"> </span><span class="err">выбору</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">css</span><span class="o">/</span><span class="n">styles</span><span class="o">.</span><span class="n">css</span><span class="w">     </span><span class="mi">1422</span><span class="w"> </span><span class="err">строки</span><span class="w">  </span><span class="err">Стили</span><span class="w"> </span><span class="err">и</span><span class="w"> </span><span class="err">анимации</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">js</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">js</span><span class="w">          </span><span class="mi">456</span><span class="w"> </span><span class="err">строк</span><span class="w">   </span><span class="err">Интерактивность</span>
+<span class="err">├──</span><span class="w"> </span><span class="n">README</span><span class="o">.</span><span class="n">md</span><span class="w">            </span><span class="o">~</span><span class="mi">150</span><span class="w"> </span><span class="err">строк</span><span class="w"> </span><span class="err">Документация</span>
+<span class="err">└──</span><span class="w"> </span><span class="n">vibe</span><span class="o">-</span><span class="n">coding</span><span class="o">-</span><span class="n">guide</span><span class="o">-</span><span class="mf">2025.</span><span class="n">md</span><span class="w"> </span><span class="o">~</span><span class="mi">1200</span><span class="w"> </span><span class="err">строк</span><span class="w"> </span><span class="err">Статья</span><span class="w"> </span><span class="err">для</span><span class="w"> </span><span class="err">блога</span>
+
+<span class="err">📊</span><span class="w"> </span><span class="n">Total</span><span class="p">:</span><span class="w"> </span><span class="o">~</span><span class="mi">4400</span><span class="o">+</span><span class="w"> </span><span class="err">строк</span>
+</code></pre></div>
+
+<h3 id="72">7.2. Внешние зависимости<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Зависимость</th>
+<th>Версия</th>
+<th>Применение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Fonts (Inter)</td>
+<td>Latest</td>
+<td>Основной шрифт</td>
+</tr>
+<tr>
+<td>Google Fonts (JetBrains Mono)</td>
+<td>Latest</td>
+<td>Моноширинный шрифт</td>
+</tr>
+<tr>
+<td>Font Awesome</td>
+<td>Не используется</td>
+<td>(SVG иконки встроены)</td>
+</tr>
+<tr>
+<td>JavaScript библиотеки</td>
+<td>Не используются</td>
+<td>Нативный JS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73">7.3. Производительность<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<p><strong>Оптимизации:</strong>
+- Минимум внешних зависимостей (только шрифты)
+- Нативный JavaScript без тяжёлых библиотек
+- CSS анимации вместо JS где возможно
+- Intersection Observer для lazy loading
+- Оптимизированные CSS селекторы</p>
+<p><strong>Оценка Lighthouse (прогноз):</strong>
+| Метрика | Оценка |
+|---------|--------|
+| Performance | 95+ |
+| Accessibility | 95+ |
+| Best Practices | 95+ |
+| SEO | 90+ |</p>
+<h3 id="74">7.4. Безопасность<a class="headerlink" href="#74" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Статический сайт без серверной логики</li>
+<li>CSP заголовки (через GitHub Pages)</li>
+<li>HTTPS по умолчанию</li>
+<li>Отсутствие пользовательских данных</li>
+<li>Минимум внешних запросов</li>
+</ul>
+<h3 id="75">7.5. Поддержка браузеров<a class="headerlink" href="#75" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Браузер</th>
+<th>Версия</th>
+<th>Поддержка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome</td>
+<td>80+</td>
+<td>✅ Полная</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>75+</td>
+<td>✅ Полная</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>13+</td>
+<td>✅ Полная</td>
+</tr>
+<tr>
+<td>Edge</td>
+<td>80+</td>
+<td>✅ Полная</td>
+</tr>
+<tr>
+<td>IE 11</td>
+<td>-</td>
+<td>❌ Не поддерживается</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. Результаты проекта<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h3 id="81">8.1. Достигнутые цели<a class="headerlink" href="#81" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Цель</th>
+<th>Статус</th>
+<th>Детали</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Анализ рынка vibe coding</td>
+<td>✅ Выполнено</td>
+<td>150+ инструментов, 6 категорий</td>
+</tr>
+<tr>
+<td>Создание каталога</td>
+<td>✅ Выполнено</td>
+<td>Полная структуризация</td>
+</tr>
+<tr>
+<td>Сравнение инструментов</td>
+<td>✅ Выполнено</td>
+<td>4 детальные таблицы</td>
+</tr>
+<tr>
+<td>Персональные рекомендации</td>
+<td>✅ Выполнено</td>
+<td>Интерактивный селектор</td>
+</tr>
+<tr>
+<td>Разработка сайта</td>
+<td>✅ Выполнено</td>
+<td>4 страницы, 2300+ строк кода</td>
+</tr>
+<tr>
+<td>Размещение на хостинге</td>
+<td>✅ Выполнено</td>
+<td>GitHub Pages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82">8.2. Количественные показатели<a class="headerlink" href="#82" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Проанализировано инструментов</td>
+<td>150+</td>
+</tr>
+<tr>
+<td>Создано страниц</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Написано строк кода</td>
+<td>2300+</td>
+</tr>
+<tr>
+<td>Создано таблиц сравнения</td>
+<td>15+</td>
+</tr>
+<tr>
+<td>Категорий инструментов</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Трендов выявлено</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Источников данных</td>
+<td>50+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83">8.3. Качественные показатели<a class="headerlink" href="#83" title="Permanent link">&para;</a></h3>
+<p><strong>Контент:</strong>
+- Актуальная информация (январь 2026)
+- Полное покрытие рынка
+- Детальные описания инструментов
+- Практические рекомендации</p>
+<p><strong>Техническая реализация:</strong>
+- Чистый, поддерживаемый код
+- Адаптивный дизайн
+- Высокая производительность
+- Доступность</p>
+<h3 id="84">8.4. Планы развития<a class="headerlink" href="#84" title="Permanent link">&para;</a></h3>
+<p><strong>Возможные улучшения:</strong>
+1. Добавить больше инструментов по мере выхода
+2. Создать английскую версию сайта
+3. Добавить функцию сравнения инструментов
+4. Интегрировать систему отзывов пользователей
+5. Добавить блог с новостями vibe coding
+6. Создать API для получения данных об инструментах</p>
+<hr />
+<h2 id="9">9. Заключение<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<h3 id="91">9.1. Итоги проекта<a class="headerlink" href="#91" title="Permanent link">&para;</a></h3>
+<p>Проект <strong>Vibe Coding Guide</strong> успешно завершён. Создан полноценный веб-сайт, содержащий:</p>
+<ul>
+<li><strong>Глубокий анализ</strong> рынка AI-инструментов для разработки</li>
+<li><strong>Полный каталог</strong> из 150+ инструментов в 6 категориях</li>
+<li><strong>Детальное сравнение</strong> инструментов в табличной форме</li>
+<li><strong>Персональные рекомендации</strong> для разных категорий пользователей</li>
+<li><strong>Практические советы</strong> по использованию vibe coding</li>
+</ul>
+<h3 id="92">9.2. Ключевые выводы<a class="headerlink" href="#92" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Рынок vibe coding</strong> находится в стадии активного роста с $1B+ ARR у лидеров</li>
+<li><strong>150+ инструментов</strong> охватывают все потребности — от новичков до Enterprise</li>
+<li><strong>Agentic IDE</strong> становятся новым стандартом профессиональной разработки</li>
+<li><strong>Open-source решения</strong> (Aider, Kilo Code, Continue) демократизируют доступ к AI-инструментам</li>
+<li><strong>Enterprise решения</strong> обеспечивают безопасность и compliance</li>
+</ol>
+<h3 id="93">9.3. Полезные ссылки<a class="headerlink" href="#93" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Ресурс</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Сайт</td>
+<td>https://uanitstudio.github.io/</td>
+</tr>
+<tr>
+<td>Репозиторий</td>
+<td>https://github.com/uanitstudio/uanitstudio.github.io</td>
+</tr>
+<tr>
+<td>Статья</td>
+<td><code>/home/ubuntu/project/Vibecoding/tools/vibe-coding-guide-2025.md</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="94">9.4. Благодарности<a class="headerlink" href="#94" title="Permanent link">&para;</a></h3>
+<p>Проект создан с использованием:
+- Данных от CB Insights, Y Combinator, GitHub
+- Открытых ресурсов и документации инструментов
+- Современных веб-технологий (HTML5, CSS3, JavaScript ES6+)</p>
+<hr />
+<p><strong>Документация создана:</strong> Январь 2026<br />
+<strong>Автор:</strong> AI Coding Assistant<br />
+<strong>Версия:</strong> 1.0</p>
+<hr />
+<p><em>Документ распространяется по лицензии MIT. Вы можете использовать, модифицировать и распространять код и контент с указанием авторства.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
