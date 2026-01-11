@@ -1,0 +1,14 @@
+[Unit]
+Description=MkDocs Development Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/project/4
+ExecStart=/home/ubuntu/.local/bin/mkdocs serve --dev-addr 0.0.0.0:8000
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
